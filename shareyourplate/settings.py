@@ -189,11 +189,17 @@ ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': str(os.getenv('CLOUDINARY_CLOUD_NAME')),
-    'API_KEY': str(os.getenv('CLOUDINARY_API_KEY')),
-    'API_SECRET': str(os.getenv('CLOUDINARY_API_SECRET')),
-}
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': str(os.getenv('CLOUDINARY_CLOUD_NAME')),
+#     'API_KEY': str(os.getenv('CLOUDINARY_API_KEY')),
+#     'API_SECRET': str(os.getenv('CLOUDINARY_API_SECRET')),
+# }
+
+cloudinary.config(
+    cloud_name = str(os.getenv('CLOUDINARY_CLOUD_NAME')),
+    api_key = str(os.getenv('CLOUDINARY_API_KEY')),
+    api_secret = str(os.getenv('CLOUDINARY_API_SECRET')),
+)
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
