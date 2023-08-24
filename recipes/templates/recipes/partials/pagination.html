@@ -1,0 +1,27 @@
+<ul class="pag__container">
+    {% if page_obj.has_previous %}
+        <li>
+            <a class="pag__item pag__item--notactive pag__first" href="?page=1">1</a>
+        </li>
+        <li>
+            <a class="pag__item pag__item--notactive" href="?page={{ page_obj.previous_page_number }}">
+                <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                </svg>
+            </a>
+        </li>
+    {% endif %}
+    <li aria-current="page" class="pag__item pag__active">{{ page_obj.number }}</li>
+    {% if page_obj.has_next %}
+        <li>
+            <a class="pag__item pag__item--notactive" href="?page={{ page_obj.next_page_number }}">
+                <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a class="pag__item pag__item--notactive pag__last" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+        </li>	
+    {% endif %}	
+</ul>	

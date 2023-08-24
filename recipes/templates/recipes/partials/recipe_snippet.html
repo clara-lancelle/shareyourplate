@@ -1,0 +1,12 @@
+<div class="recipe__snippet relative group">
+    <img class="recipe__pop__img" src="{{ recipe.picture.image.url }}" alt="{{ recipe.picture.caption }}">
+    <div class="recipe__pop__div">
+        <h4 class="recipe__title recipe__title--snippet">{{ recipe.name|capfirst }}</h4>
+        <p class="recipe__badge--little recipe__badge--cat no-m">{{ recipe.get_category_display }} </p>
+        <div class="recipe__pop__subdiv">
+            <p class="recipe__p recipe__p--snippet"><strong>Écrit par {{ recipe.author }}</strong></p>
+            <p class="recipe__p recipe__p--snippet">{{ recipe.date_created }}</p>
+        </div>
+        <a class="btn btn--orange" href="{% url 'recipe-view' recipe.id %}">En savoir plus</a>
+    </div>
+</div>

@@ -1,0 +1,109 @@
+/* Recipe */
+
+.recipe__bloc {
+    @apply flex-1 flex flex-col justify-center xl:pt-0 pt-1 sm:px-6 xl:px-24 max-w-5xl mx-auto sm:py-10 px-4 py-2 md:px-10 bg-gradient-to-b from-white to-gray-100;
+}
+
+.recipe__title {
+    @apply flex self-start text-5xl my-8 sm:text-5xl font-serif text-gray-700 leading-normal;
+}
+
+.recipe__image {
+    @apply self-center xl:max-w-6xl my-5 flex rounded-lg transition duration-300 ease-in-out transform hover:translate-y-1 hover:shadow-slate-400 hover:shadow-sm max-w-screen-sm lg:max-w-screen-md;
+
+}
+
+.recipe__link {
+    @apply underline decoration-4 decoration-blue-400;
+}
+
+.recipe__content {
+    @apply prose lg:prose-xl max-w-full mt-5;
+}
+
+.recipe__p {
+    @apply text-base font-extralight italic;
+}
+
+.recipe__description {
+    @apply flex self-center justify-center font-thin;   
+}
+
+.recipe__author {
+    @apply inline-flex align-middle gap-x-8 items-center pt-5 pb-10;
+}
+
+.recipe__author--subblock {
+    @apply inline-flex items-center gap-x-1 text-base;
+}
+
+/* Stages */
+
+.recipe__stages {
+    @apply max-w-4xl bg-white py-5 px-4 ;
+}
+
+.recipe__stage__title {
+    @apply flex first-letter:uppercase text-2xl my-5 font-light text-orange-700;
+}
+
+.recipe__stage__text {
+    @apply first-letter:uppercase text-lg font-extralight;
+}
+
+
+/* Bagdes */
+
+.recipes__badges {
+    @apply flex flex-row justify-evenly;
+}
+
+.recipe__badge {
+    @apply mx-4 w-fit font-medium text-lg mr-2 px-2.5 py-0.5 rounded;
+}
+
+.recipe__badge--little {
+    @apply w-fit font-medium text-sm px-2.5 py-0.5 rounded;
+}
+
+.recipe__badge--cat {
+   @apply bg-sky-100 text-gray-800;
+}
+
+/* Snippet */
+
+.as-console-wrapper {
+    display: none !important;
+}
+
+.recipe__snippet__group {
+    @apply flex flex-col md:flex-row flex-wrap gap-1 sm:gap-3 justify-evenly;
+}
+
+ .recipe__snippet {
+    @apply flex xl:w-1/3 md:w-[45%] sm:w-[90%];
+}
+
+.recipe__pop__img {
+    @apply flex rounded-lg transition duration-300 ease-in-out transform hover:translate-y-1 hover:shadow-slate-400 hover:shadow-md focus:ring-4 focus:outline-none px-5 py-2.5 text-center;
+}
+
+.recipe__pop__div {
+    @apply p-3 flex flex-col max-h-full opacity-0 group-hover:opacity-100 bg-opacity-80 duration-300 absolute inset-x-0 bottom-0 top-0 justify-end items-baseline bg-gray-500 text-white font-semibold;
+}
+
+.recipe__title--snippet {
+    @apply text-2xl sm:text-2xl text-white mt-0 mb-2 w-full;
+}
+
+.recipe__pop__subdiv {
+    @apply flex flex-row flex-wrap justify-start gap-3 align-baseline py-3 text-opacity-100;
+}
+
+.recipe__p--snippet {
+    @apply text-white font-normal text-sm;
+}
+
+.recipe__ingredients {
+    @apply flex h-40 overflow-y-auto flex-wrap flex-row justify-around text-base bg-white bg-opacity-50 mb-3;
+}

@@ -1,0 +1,9 @@
+/* Filters */
+
+.filters {
+    @apply flex justify-around w-full flex-row flex-wrap pb-4 pt-0 h-auto border-b-2 border-y-lime-400;
+}
+
+.filters__btn {
+    @apply text-stone-700 hover:text-lime-400 text-sm;
+}

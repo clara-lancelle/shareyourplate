@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section class="content content--center"> 
+        <h1 class=" mt-5"> OUPS.. C'est une impasse. </h1>
+        <a class="backBtn" href="javascript:history.go(-1)" title="retour à la page précédente">Page précédente</a>
+        <img src="{% static 'images/Monster_404_Error.gif' %}" alt="erreur 404" class="monsterError">
+    </section>
+{% endblock content %}

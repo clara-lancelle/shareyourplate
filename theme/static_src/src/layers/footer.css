@@ -1,0 +1,9 @@
+/* Footer */
+
+footer {
+    @apply bg-blend-overlay dark:bg-gray-800 dark:border-gray-700 bg-white/20 w-full;
+}
+
+.footer-content {
+    @apply max-w-screen-xl flex flex-wrap items-center w-full justify-center mx-auto px-1 py-5 text-sm text-slate-500;
+}

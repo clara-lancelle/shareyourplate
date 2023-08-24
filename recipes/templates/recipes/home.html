@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container--col">
+		{% if page_obj|length > 0 %}
+			<div class="recipe__snippet__group">
+				{% for instance in page_obj %}
+					{% include 'recipes/partials/recipe_snippet.html' with recipe=instance %}
+				{% endfor %}
+			</div>
+			{% include 'recipes/partials/pagination.html' with page_obj=page_obj %}
+		{% endif %}
+    </div>
+{% endblock content %}

@@ -1,0 +1,50 @@
+/* Navbar */
+
+nav {
+    @apply bg-blend-overlay bg-white w-full;
+}
+
+.nav-content {
+    @apply max-w-screen-xl flex flex-wrap items-center w-full justify-between mx-auto px-1 py-3;
+}
+
+.nav-link {
+    @apply block px-4 py-2 my-0 text-sm text-gray-700 hover:bg-gray-100;
+}
+
+.user-dropdown {
+    @apply z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow ;
+}
+
+.user-dropdown__item {
+    @apply block text-sm text-gray-900;
+}
+
+
+.main-menu {
+    @apply items-center justify-between w-full order-1 inset-x-0 p-2 pr-2 ml-3 mr-5 z-40;
+}
+
+.main-menu-btn {
+    @apply inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200;
+}
+
+.main-menu-ul {
+    @apply flex font-medium p-4 mt-4 items-start lg:items-center rounded-lg lg:flex-row flex-col md:space-x-8 md:mt-0 md:border-0 rounded-r-lg shadow-md transition transform origin-top-right bg-white overflow-hidden px-2 pt-2 pb-3 space-y-1 ;
+}
+
+.main-menu-ul--nolog {
+    @apply space-x-1 pb-2 justify-around;
+}
+
+.main-menu-ul--nolog li {
+    @apply mx-1;
+}
+
+.main-menu-link {
+    @apply block px-3 mt-0 lg:py-2 my-0 rounded-md text-base font-medium text-gray-700 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out hover:bg-gray-100;
+}
+
+.user-menu-button {
+    @apply flex mr-3 text-sm bg-gray-800 rounded-full  focus:ring-4 focus:ring-gray-300;
+}

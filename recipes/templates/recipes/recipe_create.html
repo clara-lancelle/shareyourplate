@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+   <div class="container">
+    <section class="sidebar sidebar--ocher">
+        <div class="sidebar-content">
+            <a href="{% url 'home' %}" class="logo">
+                {# <img src="{% static 'images/favicon.png' %}" alt="logo - shp"> #}
+            </a>
+            <h2 class="font-bold">Partagez vos plus belles reussites.</h2>
+        </div>
+    </section>
+    <section class="content">
+        <h2 class="page-title">Ajouter votre recette</h2>
+        {% include 'recipes/partials/recipe_form.html' with recipe_form=recipe_form picture_form=picture_form formset=formset %}
+    </section>
+   </div>
+{% endblock content %}

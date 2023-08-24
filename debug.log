@@ -1,0 +1,269 @@
+Watching for file changes with StatReloader
+Session data corrupted
+"GET /recipe/create HTTP/1.1" 302 0
+Session data corrupted
+"GET /?next=/recipe/create HTTP/1.1" 200 4261
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75514
+"GET /static/images/default_profile.png HTTP/1.1" 200 216568
+"GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+"GET /static/images/favicon.png HTTP/1.1" 200 8736
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4444
+Session data corrupted
+"GET /?next=/recipe/create HTTP/1.1" 200 4261
+"GET /static/css/dist/styles.css HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4444
+Session data corrupted
+"GET /signup/ HTTP/1.1" 200 6697
+"GET /static/css/dist/styles.css HTTP/1.1" 304 0
+Session data corrupted
+"GET /signup/ HTTP/1.1" 200 6729
+"GET /static/css/dist/styles.css HTTP/1.1" 304 0
+/home/pinklady/dev/python/shareyourplate/authentication/models.py changed, reloading.
+Watching for file changes with StatReloader
+Session data corrupted
+"GET /signup/ HTTP/1.1" 200 6743
+"GET /static/css/dist/styles.css HTTP/1.1" 304 0
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Session data corrupted
+"POST /signup/ HTTP/1.1" 302 0
+"GET /home/ HTTP/1.1" 200 6904
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75514
+"GET /static/images/favicon.png HTTP/1.1" 200 8736
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova.webp HTTP/1.1" 200 23200
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova_j15c9lR.webp HTTP/1.1" 200 36552
+"GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+"GET /media/IMG_20230718_222807.jpg HTTP/1.1" 200 56627
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4444
+"GET /home/ HTTP/1.1" 200 6904
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75536
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova_j15c9lR.webp HTTP/1.1" 304 0
+"GET /home/ HTTP/1.1" 200 6908
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75610
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova_j15c9lR.webp HTTP/1.1" 304 0
+"GET /home/ HTTP/1.1" 200 6908
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75610
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova_j15c9lR.webp HTTP/1.1" 200 36552
+"GET /static/images/favicon.png HTTP/1.1" 200 8736
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova.webp HTTP/1.1" 200 23200
+"GET /media/IMG_20230718_222807.jpg HTTP/1.1" 200 56627
+"GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4444
+"GET /home/ HTTP/1.1" 200 6933
+"GET /static/css/dist/styles.css HTTP/1.1" 304 0
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova_j15c9lR.webp HTTP/1.1" 304 0
+"GET /home/ HTTP/1.1" 200 6933
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75610
+"GET /static/images/favicon.png HTTP/1.1" 200 8736
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova.webp HTTP/1.1" 200 23200
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova_j15c9lR.webp HTTP/1.1" 200 36552
+"GET /media/IMG_20230718_222807.jpg HTTP/1.1" 200 56627
+"GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4444
+"GET /home/ HTTP/1.1" 200 6933
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75651
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova_j15c9lR.webp HTTP/1.1" 304 0
+"GET /home/ HTTP/1.1" 200 6933
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75651
+"GET /static/images/favicon.png HTTP/1.1" 200 8736
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova.webp HTTP/1.1" 200 23200
+"GET /media/IMG_20230718_222807.jpg HTTP/1.1" 200 56627
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova_j15c9lR.webp HTTP/1.1" 200 36552
+"GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4444
+"GET /home/ HTTP/1.1" 200 6933
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75651
+"GET /static/images/favicon.png HTTP/1.1" 200 8736
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova.webp HTTP/1.1" 200 23200
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova_j15c9lR.webp HTTP/1.1" 200 36552
+"GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+"GET /media/IMG_20230718_222807.jpg HTTP/1.1" 200 56627
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4444
+"GET /home/ HTTP/1.1" 200 6948
+"GET /static/css/dist/styles.css HTTP/1.1" 304 0
+"GET /home/ HTTP/1.1" 200 6948
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75746
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova_j15c9lR.webp HTTP/1.1" 304 0
+"GET /static/css/dist/styles.css HTTP/1.1" 304 0
+"GET /home/ HTTP/1.1" 200 6948
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75748
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova_j15c9lR.webp HTTP/1.1" 304 0
+"GET /home/ HTTP/1.1" 200 6948
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75746
+"GET /home/ HTTP/1.1" 200 6948
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75786
+"GET /home/ HTTP/1.1" 200 6948
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75810
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova_j15c9lR.webp HTTP/1.1" 304 0
+"GET /home/ HTTP/1.1" 200 6948
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75809
+"GET /home/ HTTP/1.1" 200 6948
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75810
+"GET /home/ HTTP/1.1" 200 6948
+"GET /static/css/dist/styles.css HTTP/1.1" 200 75816
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /static/css/dist/styles.css HTTP/1.1" 304 0
+"GET /media/Soupe-de-carottes-au-carvi-Iryna_Kolesova_j15c9lR.webp HTTP/1.1" 304 0
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3981
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 200 5444
+"GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4444
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4444
+"GET /admin/auth/group/ HTTP/1.1" 200 7324
+"GET /static/admin/css/changelists.css HTTP/1.1" 200 6584
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+"GET /static/admin/js/core.js HTTP/1.1" 200 5682
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+"GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+"GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+"GET /static/admin/js/filters.js HTTP/1.1" 200 978
+"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+"GET /admin/ HTTP/1.1" 200 5444
+/home/pinklady/dev/python/shareyourplate/authentication/admin.py changed, reloading.
+Watching for file changes with StatReloader
+/home/pinklady/dev/python/shareyourplate/authentication/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 6150
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+"GET /static/admin/css/base.css HTTP/1.1" 200 21207
+"GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+"GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+"GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+"GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4444
+"GET /admin/authentication/user/ HTTP/1.1" 200 10013
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/authentication/user/7/change/ HTTP/1.1" 200 20463
+"GET /static/admin/css/forms.css HTTP/1.1" 200 8953
+"GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+"GET /static/admin/css/widgets.css HTTP/1.1" 200 11900
+"GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+/home/pinklady/dev/python/shareyourplate/recipes/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/authentication/user/7/change/ HTTP/1.1" 200 20993
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/recipes/recipe/ HTTP/1.1" 200 9510
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/recipes/recipe/27/change/ HTTP/1.1" 200 17130
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+/home/pinklady/dev/python/shareyourplate/recipes/models.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/recipes/recipe/27/change/ HTTP/1.1" 200 17127
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/recipes/recipe/ HTTP/1.1" 200 9509
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+/home/pinklady/dev/python/shareyourplate/recipes/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/recipes/recipe/ HTTP/1.1" 200 10413
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/recipes/recipe/ HTTP/1.1" 200 10413
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/recipes/stage/ HTTP/1.1" 200 10401
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/recipes/picture/ HTTP/1.1" 200 10650
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/recipes/ingredient/ HTTP/1.1" 200 11653
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+/home/pinklady/dev/python/shareyourplate/recipes/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/recipes/ingredient/ HTTP/1.1" 200 11653
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+/home/pinklady/dev/python/shareyourplate/recipes/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/recipes/ingredient/ HTTP/1.1" 200 11653
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+/home/pinklady/dev/python/shareyourplate/recipes/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/recipes/ingredient/ HTTP/1.1" 200 11653
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/recipes/recipe/ HTTP/1.1" 200 11414
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+/home/pinklady/dev/python/shareyourplate/recipes/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/recipes/recipe/ HTTP/1.1" 200 11414
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+/home/pinklady/dev/python/shareyourplate/recipes/admin.py changed, reloading.
+Watching for file changes with StatReloader
+/home/pinklady/dev/python/shareyourplate/recipes/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/recipes/recipe/ HTTP/1.1" 200 11414
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+/home/pinklady/dev/python/shareyourplate/recipes/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/recipes/recipe/ HTTP/1.1" 200 11414
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+/home/pinklady/dev/python/shareyourplate/recipes/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/recipes/recipe/ HTTP/1.1" 200 11414
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/recipes/recipe/ HTTP/1.1" 200 11414
+"GET /static/admin/css/base.css HTTP/1.1" 200 21207
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+"GET /static/admin/css/changelists.css HTTP/1.1" 200 6584
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+"GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+"GET /static/admin/js/core.js HTTP/1.1" 200 5682
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+"GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+"GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+"GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+"GET /static/admin/js/filters.js HTTP/1.1" 200 978
+"GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4444
+"GET /admin/recipes/recipe/ HTTP/1.1" 200 11414
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/recipes/stage/ HTTP/1.1" 200 10401
+/home/pinklady/dev/python/shareyourplate/recipes/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/recipes/recipe/ HTTP/1.1" 200 11414
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+/home/pinklady/dev/python/shareyourplate/recipes/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/recipes/recipe/ HTTP/1.1" 200 11414
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/recipes/stage/ HTTP/1.1" 200 10720
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET /admin/recipes/ingredient/ HTTP/1.1" 200 12153
+"GET /admin/jsi18n/ HTTP/1.1" 200 8621
+"GET / HTTP/1.1" 302 0
+"GET /home/ HTTP/1.1" 200 6915
+"GET /static/css/dist/styles.css HTTP/1.1" 304 0

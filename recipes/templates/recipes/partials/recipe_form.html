@@ -1,0 +1,135 @@
+<form method="post" enctype="multipart/form-data" id="form">
+    {% csrf_token %}
+    {% if recipe_form.errors %}
+        <div class="error-message"> {{ recipe_form.non_field_errors }} </div>
+    {% endif %}
+    {% for input in recipe_form %}
+        {% if input.name != 'edit_recipe' %}
+            <div class="floating-field group">
+                {{ input }}
+                <label class="floating-label" for="{{ input.auto_id }}">{{ input.label }}</label>
+                {% if input.errors %}
+                    {% for error in input.errors %}
+                        <p class="error-message"> {{ error }} </p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        {% else %}
+            {{input}}
+        {% endif %}
+    {% endfor %}
+    <legend>Illustration de votre recette</legend>
+    {% if picture_form.errors %}
+        <div class="error-message"> {{ picture_form.non_field_errors }} </div>
+    {% endif %}
+    {% for input in picture_form %}
+        {% if input.name == 'caption' %}
+                <div class="floating-field group">
+                    {{ input }}
+                    <label class="floating-label" for="{{ input.auto_id }}">{{ input.label }}</label>
+                </div>
+        {% else %}
+            <div class="flex items-center justify-center w-full">
+                <label for="{{ input.auto_id }}" class="file-big-field">
+                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                        <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                            <span class="font-semibold">Cliquez pour télécharger</span> ou deposez votre image</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                        <p class="mt-7 text-sm text-orange-500" id="input-image-value"></p>
+                    </div>
+                    {{ input }}
+                </label>
+            </div>
+        {% endif %}
+            {% if input.errors %}
+                {% for error in input.errors %}
+                    <p class="error-message"> {{ error }} </p>
+                {% endfor %}
+            {% endif %}
+    {% endfor %}
+    <legend>Ingrédients</legend>
+    {% if ingredient_formset.non_field_errors %}
+        <div class="error-message"> {{ ingredient_formset.non_field_errors }} </div>
+    {% endif %}
+    <div>
+        {{ ingredient_formset.management_form }}
+        {% for field in ingredient_formset %}
+            <div class="formset__item ingredient_form">
+                {{ field.hidden }}
+                <div class="formset__field">
+                    {% for input in field %}
+                        {% if input.name == 'content' %}
+                            <div class="floating-field floating-field group floating-field--lessmy">
+                                {{ input }}
+                                <label class="floating-label floating-label--textarea" for="{{ input.auto_id }}">{{ input.label }}</label>    
+                            </div>
+                        {% elif 'DELETE' in input.name and '-0-' not in input.auto_id %}
+                            <div class="formset__delete-bloc">
+                                <p>Supprimer</p>
+                                {{ input }}
+                            </div>
+                        {% elif 'DELETE' in input.name and '-0-' in input.auto_id %}
+                        <div class="formset__delete-bloc disable">
+                            <p>Supprimer</p>
+                            {{ input }}
+                        </div>
+                        {% else %}
+                            {{ input.hidden }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% if field.errors %}
+                    <div class="error-message"> {{ field.errors.content }} </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    <button id="add-ingredient-form" type="button" class="btn btn--blue">
+        Ajouter un ingredient
+      </button>
+    <legend>Etapes de votre recette</legend>
+    {% if formset.non_field_errors %}
+        <div class="error-message"> {{ formset.non_field_errors }} </div>
+    {% endif %}
+    <div>
+        {{ formset.management_form }}
+        {% for field in formset %}
+        <div class="formset__item stage_form">
+            <p class="field-name">Etape n°{{ forloop.counter }}</p>
+            {{ field.hidden }}
+            <div class="formset__field">
+                {% for input in field %}
+                    {% if input.name == 'content' %}
+                        <div class="floating-field floating-field--lessmy    group">
+                            {{ input }}
+                            <label class="floating-label floating-label--textarea" for="{{ input.auto_id }}">{{ input.label }}</label>    
+                        </div>
+                    {% elif 'DELETE' in input.name and '0' not in input.auto_id %}
+                        <div class="formset__delete-bloc">
+                            <p>Supprimer</p>
+                            {{ input }}
+                        </div>
+                    {% elif 'DELETE' in input.name and '-0-' in input.auto_id %}
+                        <div class="formset__delete-bloc disable">
+                            <p>Supprimer</p>
+                            {{ input }}
+                        </div>
+                    {% else %}
+                        {{ input.hidden }}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% if field.errors %}
+                <div class="error-message"> {{ field.errors.content }} </div>
+            {% endif %}
+        </div>
+        {% endfor %} 
+    </div>
+    <button id="add-form" type="button" class="btn btn--blue">
+        Encore une étape ?
+    </button>
+   <div class="btn-container">
+        <button type="submit" class="btn btn--rose">Sauvegarder</button>
+   </div>
+</form>

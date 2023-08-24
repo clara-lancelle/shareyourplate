@@ -1,0 +1,10 @@
+.link {
+    @apply font-medium hover:underline;
+}
+
+.link--rose {
+    @apply text-rose-400 dark:text-rose-500;
+}
+.link--orange {
+    @apply text-orange-300 dark:text-orange-500;
+}

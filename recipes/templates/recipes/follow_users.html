@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="content content--center"> 
+    <div class="content__subsection">
+        {% if followed_account %}
+            <h3>Comptes que vous suivez : </h3>
+            {% for item in followed_account %}
+                <p>{{ item.username }}</p>
+            {% endfor %}   
+        {% endif %}
+    </div>
+    <form method="post" class="form--django">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <div class="btn-container">
+            <button type="submit" class="btn btn--rose">Suivre</button>
+       </div>
+    </form>
+</section>
+{% endblock content %}

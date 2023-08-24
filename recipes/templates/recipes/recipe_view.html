@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load recipe_extras static %}
+{% block content %}
+    <section class="recipe__bloc">
+        <h2 class="recipe__title">{{ recipe.name|capfirst }}</h2>
+        <div class="recipe__author">
+            <h3 class="recipe__p">Auteur : </h3>
+            <div class="recipe__author--subblock">
+                {% if recipe.author.profile_photo %}
+                    <img class="w-8 h-8 rounded-full" src="{{ recipe.author.profile_photo.url }}" alt="{{ recipe.author.username }} photo">
+                {% else %}
+                    <img class="w-8 h-8 rounded-full" src="{% static 'images/default_profile.png' %}" alt="user photo">
+                {% endif %}
+                <p>{% display_author recipe.author %}</p>
+            </div>
+            {% if recipe.author != request.user %}
+                <form method="post" class="mb-0">
+                    {% csrf_token %}
+                    {% if recipe.author in request.user.follows.all %}
+                        <button type="submit" class="btn btn--red btn--little" name="follow" value="unfollow">Ne plus suivre</button>
+                    {% else %}
+                        <button type="submit" class="btn btn--blue btn--little" name="follow" value="follow">Suivre</button>
+                    {% endif %}
+                </form>
+                <a href="{% url 'recipes-feed' recipe.author.id %}" class="recipe__link">Voir le feed</a>
+            {% endif %}
+        </div>
+        <p class="recipe__p">{{ recipe.date_created }}</p>
+        <img class="recipe__image" src="{{ recipe.picture.image.url }}" alt="{{ recipe.picture.caption }}">
+        <div class="recipe__content">   
+            {% if recipe.description is not None %}
+                <p class="recipe__description">{{ recipe.description }}</p>
+            {% endif %}
+            <p><span class="recipe__p">Temps de préparation :</span> {{ recipe.preparation_time }}</p>
+            <p><span class="recipe__p">Temps de cuisson :</span> {{ recipe.cooking_time }}</p>
+            <div class="recipes__badges">
+                <p class="recipe__p">Catégorie :<span class="recipe__badge recipe__badge--cat">{{ recipe.get_category_display }}</span></p>
+                <p class="recipe__p">Difficultée :{{ recipe.get_level_display|bg_color|safe }}</p>
+                <p class="recipe__p">Coût :{{ recipe.get_cost_display|bg_color|safe }}</p>
+            </div>
+            <p class="recipe__p">Nombre de parts : {{ recipe.piece }}.</p>
+            <h4 class="subtitle">{{recipe.ingredient_set.all|length }} Ingredients : </h4>
+            <div class="recipe__ingredients">
+                {% for ingredient in recipe.ingredient_set.all %}
+                    <p class="recipe__ingredient__text">{{ ingredient.content }}</p>
+                {% endfor %}
+            </div>
+            <div class="recipe__stages">
+                {% for stage in recipe.stage_set.all %}
+                    <h3 class="recipe__stage__title">Etape n°{{ forloop.counter }}</h3>
+                    <p class="recipe__stage__text">{{ stage.content }}</p>
+                {% endfor %}
+            </div>
+            {% if recipe.author == request.user %}
+                <p><a href="{% url 'recipe-edit' recipe.id %}">Modifier</a></p>
+            {% endif %}
+        </div>
+    </section>
+{% endblock content %}

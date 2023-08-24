@@ -1,0 +1,26 @@
+/* Pagination */
+
+.pag__container {
+    @apply inline-flex -space-x-px text-sm self-center py-10;
+}
+
+.pag__item {
+    @apply flex items-center justify-center px-3 h-8;
+}
+
+.pag__item--notactive {
+    @apply  hover:bg-gray-100 hover:text-gray-700  text-gray-500 bg-white border border-gray-300 leading-tight;
+}
+
+.pag__first {
+    @apply  ml-0 rounded-l-lg;
+}
+
+.pag__active {
+    @apply  text-orange-600 border border-gray-300 bg-orange-50 hover:bg-orange-100 hover:text-orange-700;
+}
+
+
+.pag__last {
+    @apply  rounded-r-lg;
+}

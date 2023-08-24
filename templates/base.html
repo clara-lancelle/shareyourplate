@@ -1,0 +1,112 @@
+{% load tailwind_tags %}
+{% load static %}
+{% load cloudinary %}
+<html>
+    <head>
+        <title>Share your plate</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.css" rel="stylesheet" />
+        {% tailwind_css %}
+    </head>
+    <body>
+        <nav>
+            <div class="nav-content">
+                <a href="{% url 'home' %}" class="flex items-center">
+                    <img src="{% static 'images/favicon.png' %}" class="h-9 mr-3" alt="Shareyourplate Logo" />
+                    <h1 class="brand">Share you plate</h1>
+                </a>
+                <div class="flex items-center">
+                    {% if user.is_authenticated %}
+                        <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full  focus:ring-4 focus:ring-gray-300" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                            {% if user.profile_photo %}
+                                <img class="w-8 h-8 rounded-full" src="{{ user.profile_photo.url }}" alt="user photo">
+                            {% else %}
+                                <img class="w-8 h-8 rounded-full" src="{% static 'images/default_profile.png' %}" alt="user photo">
+                            {% endif %}
+                        </button>
+                        <!-- Dropdown menu authenticated-->
+                        <div class="user-dropdown" id="user-dropdown">
+                            <div class="px-4 py-3">
+                                <span class="user-dropdown__item">{{ user }}</span>
+                                <span class="user-dropdown__item text-gray-500 truncate">{{ user.email }}</span>
+                            </div>
+                            <ul class="py-2" aria-labelledby="user-menu-button">
+                                <li>
+                                    <a href="{% url 'profile_photo_upload' %}" class="nav-link my-0">Modifier la photo de profil</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'change-password' %}" class="nav-link my-0">Modifier le mot de passe</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'logout' %}" class="nav-link my-0">Se déconnecter</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button data-collapse-toggle="mobile-menu-2" type="button" class="main-menu-btn" aria-controls="mobile-menu-2" aria-expanded="false">
+                            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="main-menu hidden" id="mobile-menu-2">
+                        <ul class="main-menu-ul">
+                            <li>
+                                <a href="{% url 'home' %}" class="main-menu-link my-0" aria-current="page">Accueil</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'recipes-all' %}" class="main-menu-link my-0">Toutes les recettes</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'recipes-feed' user.id %}" class="main-menu-link my-0">Vos recettes</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'recipe-create' %}" class="main-menu-link my-0">Enregistrer une recette</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'follow-users' %}" class="main-menu-link my-0">Suivre des utilisateurs</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'search' %}" class="main-menu-link my-0">Recherche</a>
+                            </li>
+                        </ul>
+                    </div>
+                    {% else %}
+                    <button type="button" class="user-menu-button" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="left">
+                        <img class="w-8 h-8 rounded-full" src="{% static 'images/default_profile.png' %}" alt="user photo">    
+                    </button>
+                        <div class="user-dropdown" id="user-dropdown">
+                            <ul class="main-menu-ul main-menu-ul--nolog" aria-labelledby="user-menu-button">
+                                <li>
+                                    <a href="{% url 'login' %}" class="nav-link">Connexion</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'signup' %}" class="nav-link">Inscription</a>
+                                </li>
+                            </ul>
+                        </div>     	     
+                    {% endif %}
+            </div>
+        </nav>
+         <div class="main">
+            {% if title %}
+                <h2 class="title__bg">> {{ title|capfirst }}</h2>
+            {% endif %}
+            {% include "includes/messages.html" %}
+            {% block content %}{% endblock content %}
+        </div>
+        <footer>
+            <p class="footer-content">ShareYourPlate &copy; Lancelle Clara </p>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js"></script>
+        <script>
+            var url = window.location.pathname;
+            if(url == '/recipe/create' || url.match(/\/recipe\/[\d]+\/edit/g)) {
+                document.body.appendChild(document.createElement('script')).src =`{% static 'js/recipe_create.js' %}`;
+            }
+            if(document.querySelector('.input-image')){ 
+                document.body.appendChild(document.createElement('script')).src =`{% static 'js/image_input.js' %}`;
+            }
+        </script>
+       
+    </body>
+</html>

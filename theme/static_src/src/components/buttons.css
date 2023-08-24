@@ -1,0 +1,33 @@
+.btn-container {
+    @apply w-full pt-12 pb-5;
+}
+
+/* Buttons */
+
+.btn {
+    @apply text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2  focus:ring-4 focus:outline-none;
+}
+
+.btn--little {
+    @apply px-2.5 py-2 text-xs;
+}
+
+.btn--blue {
+    @apply  bg-blue-700 hover:bg-blue-800 focus:ring-blue-300;
+}
+
+.btn--red {
+    @apply  bg-red-500 hover:bg-red-600 focus:ring-red-100;
+}
+
+.btn--rose {
+    @apply bg-pink-500 hover:bg-pink-600 focus:ring-rose-100 ;
+}
+
+.btn--orange {
+    @apply bg-orange-400  hover:bg-orange-500 focus:ring-orange-100 
+}
+
+.delete__btn {
+    @apply text-red-700 hover:cursor-pointer hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2;
+}

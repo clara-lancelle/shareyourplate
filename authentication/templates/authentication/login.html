@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <section class="sidebar sidebar--ocher">
+            <div class="sidebar-content">
+                <a href="{% url 'home' %}" class="logo">
+                    {# <img src="{% static 'images/favicon.png' %}" alt="logo - shp"> #}
+                </a>
+                <h2 class="font-bold">Partagez vos plus belles reussites.</h2>
+            </div>
+        </section>
+        <section class="content">
+            <h2 class="page-title">Connexion</h2>
+            <form method="post">
+                {% if form.errors %}
+                    <div class="error-message">{{ form.non_field_errors }}</div>
+                {% endif %}
+                {% for input in form %}
+                    <div class="floating-field group">
+                        {% if input.name == 'password' %}
+                            <input type="password" name="{{ input.name }}" id="{{ input.auto_id }}" class="floating-input peer" placeholder=" ">
+                        {% else %}
+                            <input type="text" name="{{ input.name }}" id="{{ input.auto_id }}" class="floating-input peer" placeholder=" ">
+                        {% endif %}    
+                        <label class="floating-label" for="{{ input.auto_id }}">{{ input.label }}</label>
+                        {% if input.errors %}
+                            {% for error in input.errors %}
+                                <p class="error-message"> {{ error }} </p>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                {% csrf_token %}
+                <button type="submit" class="btn btn--rose">Se connecter</button>
+            </form> 
+            <p>Pas encore membre ?
+                <a href="{% url 'signup' %}" class="link link--rose">Inscrivez-vous maintenant !</a>
+            </p>
+        </section>
+    </div>
+{% endblock content %}

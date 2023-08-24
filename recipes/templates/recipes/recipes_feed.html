@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="container--col">
+		{% if page_obj %}
+			{% include 'recipes/partials/filter.html' with filters=filters %}
+			<div class="recipe__snippet__group">
+				{% for recipe in page_obj %}
+					{% include 'recipes/partials/recipe_snippet.html' with recipe=recipe %}
+				{% endfor %}
+			</div>
+			{% include 'recipes/partials/pagination.html' with page_obj=page_obj %}
+		{% endif %}
+    </div>
+{% endblock content %}

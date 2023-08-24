@@ -1,0 +1,76 @@
+/* Forms */
+
+.form--django {
+    @apply flex flex-col gap-y-5
+}
+
+legend {
+    @apply py-3 mt-5 mb-3 leading-4 border-b-2 border-b-red-200 text-lg text-red-400;
+}
+
+/* Fields */
+
+.field-name {
+    @apply pt-2 pb-1 text-base text-slate-400;
+}
+
+.file-big-field {
+    @apply flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600;
+}
+
+/* Floating input */
+
+.floating-input {
+    @apply mt-1 block pt-3 pb-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600;
+}
+
+.floating-input--textarea {
+    @apply bg-slate-50 z-0;
+}
+
+.floating-input--lessmt {
+    @apply my-1 !important;
+}
+
+.floating-input--select {
+    @apply h-28 lg:h-32;
+}
+
+.floating-label {
+    @apply peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-100 top-3 z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-6;
+}
+
+.floating-label--textarea {
+    @apply top-6;
+}
+
+
+/* formset */
+
+.formset__field {
+    @apply flex place-items-center;
+}
+
+.floating-field {
+    @apply relative z-0 w-full my-3;
+}
+
+.floating-field--lessmy {
+    @apply my-1;
+}
+
+.formset__delete-bloc {
+    @apply flex flex-col justify-center items-center gap-2;
+}
+
+.formset__delete-bloc p {
+    @apply text-xs text-red-500;
+}
+
+.formset__delete-box {
+    @apply w-4 h-4 text-red-600 bg-gray-100 border-gray-300 rounded focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600;
+}
+
+.disable {
+    @apply hidden;
+}

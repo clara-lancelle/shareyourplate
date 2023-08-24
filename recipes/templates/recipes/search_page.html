@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section class="content">   
+        <form method="post" class="form--django">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn--orange my-5 w-fit">Rechercher</button>
+        </form>
+        {% if users %}
+            <h3 class="subtitle">Utilisateurs trouvés :</h3>
+            <div class="block block--list">
+                {% for user in users %}
+                    <div class="recipe__author--subblock block__item">
+                        {% if user.profile_photo %}
+                            <img class="w-8 h-8 rounded-full" src="{{ user.profile_photo.url }}" alt="{{ user.username }} photo">
+                        {% else %}
+                            <img class="w-8 h-8 rounded-full" src="{% static 'images/default_profile.png' %}" alt="user photo">
+                        {% endif %}
+                        <p>{{ user.username }}</p>
+                        <a href="{% url 'recipes-feed' user.id %}" class="recipe__link">Voir le feed</a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if recipes %}
+            <h3 class="subtitle">Recettes trouvées :</h3>
+            <div class="container--col">
+                <div class="recipe__snippet__group">
+                    {% for recipe in recipes %}
+                        <div class="block__item">
+                            {% include 'recipes/partials/recipe_snippet.html' with recipe=recipe %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}        
+    </section>
+{% endblock content %}
