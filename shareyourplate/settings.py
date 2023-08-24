@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 import cloudinary
 import cloudinary_storage
-from dotenv import load_dotenv
 
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
 load_dotenv(dotenv_path)
@@ -43,14 +43,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
+    'cloudinary_storage',
     'authentication',
     'recipes',
     'tailwind',
     'handler',
     'theme',
     'django_browser_reload',
-    'cloudinary',
-    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -104,13 +104,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-# LANGUAGE_CODE = 'fr-fr'
+LANGUAGE_CODE = 'fr-fr'
 
-# TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC'
 
-# USE_I18N = True
+USE_I18N = True
 
-# USE_TZ = True
+USE_TZ = True
 
 
 # Default primary key field type
@@ -189,13 +189,13 @@ ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': str(os.getenv('CLOUD_NAME')),
-    'API_KEY': str(os.getenv('API_KEY')),
-    'API_SECRET': str(os.getenv('API_SECRET')),
+    'CLOUD_NAME': str(os.getenv('CLOUDINARY_CLOUD_NAME')),
+    'API_KEY': str(os.getenv('CLOUDINARY_API_KEY')),
+    'API_SECRET': str(os.getenv('CLOUDINARY_API_SECRET')),
 }
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DATABASES = {
     'default': {
