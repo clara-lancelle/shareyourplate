@@ -81,6 +81,7 @@ def home(request):
         page_obj = paginator.get_page(page_number)
     else :
         page_obj = []
+        messages.info(request, "Oups.. C'est bien vide ici.")
     context = {
         'page_obj': page_obj,
         'title': 'Accueil',
