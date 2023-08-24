@@ -11,15 +11,15 @@ class Picture(models.Model):
     caption = models.CharField(max_length=128, blank=True, verbose_name='Titre de l\'image')
     IMAGE_MAX_SIZE = (800, 800)
 
-    def resize_image(self):
-        image = CloudinaryImage(self.image).image(width=250, height=250, gravity="faces", crop="fill")
-        # image = Image.open(self.image)
-        # image.thumbnail(self.IMAGE_MAX_SIZE)
-        image.save(self.image.path)
+    # def resize_image(self):
+    #     image = CloudinaryImage(self.image).image(width=250, height=250, gravity="faces", crop="fill")
+    #     # image = Image.open(self.image)
+    #     # image.thumbnail(self.IMAGE_MAX_SIZE)
+    #     image.save(self.image.path)
 
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-        self.resize_image()
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)
+    #     self.resize_image()
 
 class Recipe(models.Model):
 
