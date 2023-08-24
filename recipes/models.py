@@ -3,6 +3,7 @@ from django.db import models
 from PIL import Image
 from django.core.validators import MaxValueValidator, MinValueValidator
 from cloudinary.models import CloudinaryField
+from cloudinary import CloudinaryImage
 
 class Picture(models.Model):
     # image = models.ImageField()
@@ -11,8 +12,9 @@ class Picture(models.Model):
     IMAGE_MAX_SIZE = (800, 800)
 
     def resize_image(self):
-        image = Image.open(self.image)
-        image.thumbnail(self.IMAGE_MAX_SIZE)
+        image = CloudinaryImage(self.image).image(width=250, height=250, gravity="faces", crop="fill")
+        # image = Image.open(self.image)
+        # image.thumbnail(self.IMAGE_MAX_SIZE)
         image.save(self.image.path)
 
     def save(self, *args, **kwargs):
