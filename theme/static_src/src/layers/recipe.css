@@ -77,7 +77,7 @@
 }
 
 .recipe__snippet__group {
-    @apply flex flex-col md:flex-row flex-wrap gap-1 sm:gap-3 justify-evenly;
+    @apply flex flex-col md:flex-row flex-wrap gap-1 sm:gap-3 justify-evenly min-h-[65vh];
 }
 
  .recipe__snippet {

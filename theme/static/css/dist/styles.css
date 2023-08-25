@@ -1107,6 +1107,7 @@ h1 {
 
 .content {
   display: flex;
+  min-height: 65vh;
   flex: 1 1 0%;
   flex-direction: column;
   justify-content: center;
@@ -2730,6 +2731,7 @@ ul.messages li {
 
 .recipe__snippet__group {
   display: flex;
+  min-height: 65vh;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
