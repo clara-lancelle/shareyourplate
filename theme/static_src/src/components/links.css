@@ -3,8 +3,8 @@
 }
 
 .link--rose {
-    @apply text-rose-400 dark:text-rose-500;
+    @apply text-rose-400;
 }
 .link--orange {
-    @apply text-orange-300 dark:text-orange-500;
+    @apply text-orange-300;
 }

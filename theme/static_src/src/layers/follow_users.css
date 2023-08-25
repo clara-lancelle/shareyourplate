@@ -1,0 +1,15 @@
+.subtitle--account {
+    @apply pb-4 underline underline-offset-8 decoration-4 decoration-blue-300;
+}
+
+.account__group {
+    @apply flex flex-row flex-wrap justify-around align-middle md:m-2 m-0 md:p-2 p-0 gap-3;
+}
+
+.account__item {
+    @apply flex flex-col items-center sm:w-[15%] w-[40%] py-2 overflow-hidden shadow-lg bg-white gap-1 text-center;
+}
+
+.account__pic {
+    @apply rounded-full w-10 h-10;
+}

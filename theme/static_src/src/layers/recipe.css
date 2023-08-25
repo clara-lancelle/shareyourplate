@@ -1,16 +1,12 @@
 /* Recipe */
 
+
 .recipe__bloc {
     @apply flex-1 flex flex-col justify-center xl:pt-0 pt-1 sm:px-6 xl:px-24 max-w-5xl mx-auto sm:py-10 px-4 py-2 md:px-10 bg-gradient-to-b from-white to-gray-100;
 }
 
-.recipe__title {
-    @apply flex self-start text-5xl my-8 sm:text-5xl font-serif text-gray-700 leading-normal;
-}
-
 .recipe__image {
     @apply self-center xl:max-w-6xl my-5 flex rounded-lg transition duration-300 ease-in-out transform hover:translate-y-1 hover:shadow-slate-400 hover:shadow-sm max-w-screen-sm lg:max-w-screen-md;
-
 }
 
 .recipe__link {
@@ -29,6 +25,10 @@
     @apply flex self-center justify-center font-thin;   
 }
 
+.recipe__text {
+    @apply first-letter:uppercase md:text-lg text-base font-extralight;
+}
+
 .recipe__author {
     @apply inline-flex align-middle gap-x-8 items-center pt-5 pb-10;
 }
@@ -37,29 +37,49 @@
     @apply inline-flex items-center gap-x-1 text-base;
 }
 
+/* titles */
+
+.recipe__title {
+    @apply flex self-start text-5xl my-8 sm:text-5xl font-serif text-gray-700 leading-normal;
+}
+
+.recipe__sub__title {
+    @apply flex first-letter:uppercase md:text-2xl text-xl my-5 font-light;
+}
+
+/* Ingredients */
+
+.recipe__ingredients {
+    @apply h-60 overflow-y-auto max-w-4xl py-5 px-4 text-base bg-white bg-opacity-70 mb-3;
+}
+
+.recipe__sub__title--ingredient {
+    @apply text-yellow-700;
+}   
+
 /* Stages */
 
 .recipe__stages {
-    @apply max-w-4xl bg-white py-5 px-4 ;
+    @apply max-w-4xl bg-white py-5 px-4;
 }
 
-.recipe__stage__title {
-    @apply flex first-letter:uppercase text-2xl my-5 font-light text-orange-700;
-}
-
-.recipe__stage__text {
-    @apply first-letter:uppercase text-lg font-extralight;
+.recipe__sub__title--stage {
+    @apply text-orange-700;
 }
 
 
 /* Bagdes */
 
 .recipes__badges {
-    @apply flex flex-row justify-evenly;
+    @apply flex flex-row md:justify-evenly justify-between;
+}
+
+.recipe__badge__p {
+    @apply md:text-base text-xs font-extralight italic whitespace-nowrap;
 }
 
 .recipe__badge {
-    @apply mx-4 w-fit font-medium text-lg mr-2 px-2.5 py-0.5 rounded;
+    @apply w-fit font-medium md:text-lg text-base md:mr-2 md:px-2.5 md:mx-4 py-0.5 p-1 m-1 rounded;
 }
 
 .recipe__badge--little {
@@ -102,8 +122,4 @@
 
 .recipe__p--snippet {
     @apply text-white font-normal text-sm;
-}
-
-.recipe__ingredients {
-    @apply flex h-40 overflow-y-auto flex-wrap flex-row justify-around text-base bg-white bg-opacity-50 mb-3;
 }

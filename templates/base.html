@@ -36,17 +36,17 @@
                             </div>
                             <ul class="py-2" aria-labelledby="user-menu-button">
                                 <li>
-                                    <a href="{% url 'profile_photo_upload' %}" class="nav-link my-0">Modifier la photo de profil</a>
+                                    <a href="{% url 'profile_photo_upload' %}" class="user-nav-link">Modifier la photo de profil</a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'change-password' %}" class="nav-link my-0">Modifier le mot de passe</a>
+                                    <a href="{% url 'change-password' %}" class="user-nav-link">Modifier le mot de passe</a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'logout' %}" class="nav-link my-0">Se déconnecter</a>
+                                    <a href="{% url 'logout' %}" class="user-nav-link">Se déconnecter</a>
                                 </li>
                             </ul>
                         </div>
-                        <button data-collapse-toggle="mobile-menu-2" type="button" class="main-menu-btn" aria-controls="mobile-menu-2" aria-expanded="false">
+                        <button data-collapse-toggle="mobile-menu-2" type="button" class="main-menu-btn" data-dropdown-toggle="mobile-menu-2" aria-expanded="false" data-dropdown-placement="bottom">
                             <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd">
                                 </path>
@@ -56,22 +56,22 @@
                     <div class="main-menu hidden" id="mobile-menu-2">
                         <ul class="main-menu-ul">
                             <li>
-                                <a href="{% url 'home' %}" class="main-menu-link my-0" aria-current="page">Accueil</a>
+                                <a href="{% url 'home' %}" class="main-menu-link" aria-current="page">Accueil</a>
                             </li>
                             <li>
-                                <a href="{% url 'recipes-all' %}" class="main-menu-link my-0">Toutes les recettes</a>
+                                <a href="{% url 'recipes-all' %}" class="main-menu-link">Toutes les recettes</a>
                             </li>
                             <li>
-                                <a href="{% url 'recipes-feed' user.id %}" class="main-menu-link my-0">Vos recettes</a>
+                                <a href="{% url 'recipes-feed' user.id %}" class="main-menu-link">Vos recettes</a>
                             </li>
                             <li>
-                                <a href="{% url 'recipe-create' %}" class="main-menu-link my-0">Enregistrer une recette</a>
+                                <a href="{% url 'recipe-create' %}" class="main-menu-link">Enregistrer une recette</a>
                             </li>
                             <li>
-                                <a href="{% url 'follow-users' %}" class="main-menu-link my-0">Suivre des utilisateurs</a>
+                                <a href="{% url 'follow-users' %}" class="main-menu-link">Follow & Unfollow</a>
                             </li>
                             <li>
-                                <a href="{% url 'search' %}" class="main-menu-link my-0">Recherche</a>
+                                <a href="{% url 'search' %}" class="main-menu-link">Recherche</a>
                             </li>
                         </ul>
                     </div>

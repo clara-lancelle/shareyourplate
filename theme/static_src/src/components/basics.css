@@ -5,7 +5,7 @@ p {
 /* Titles */
 
 h1 {
-    @apply self-center text-2xl font-mono whitespace-nowrap dark:text-white pt-3;
+    @apply self-center sm:text-2xl font-mono whitespace-nowrap pt-3 text-xl;
 }
 .section__title {
     @apply leading-9 my-4 text-2xl;
@@ -42,15 +42,7 @@ h1 {
 }
 
 .content__subsection {
-    @apply flex flex-col p-3 my-5 bg-zinc-100 ;
-}
-
-.content__subsection > h3 {
-    @apply pb-5;
-}
-
-.content__subsection > p {
-    @apply pl-5;
+    @apply flex flex-col p-3 my-5 bg-gray-50;
 }
 
 /* Sidebars */

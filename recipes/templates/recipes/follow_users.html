@@ -1,20 +1,62 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<section class="content content--center"> 
+<section class="content"> 
     <div class="content__subsection">
-        {% if followed_account %}
-            <h3>Comptes que vous suivez : </h3>
-            {% for item in followed_account %}
-                <p>{{ item.username }}</p>
-            {% endfor %}   
-        {% endif %}
+        <h3 class="subtitle subtitle--account">Comptes que vous suivez : </h3>
+        <div class="account__group">
+            {% for user in request.user.follows.all %}
+            <div class="account__item">
+                <a href="{% url 'recipes-feed' user.id %}" class="account__link" title="Voir le feed de {{user.username}}">
+                    {% if user.profile_photo %}
+                        <img class="account__pic" src="{{ user.profile_photo.url }}" alt="{{ user.username }} photo">
+                    {% else %}
+                        <img class="account__pic" src="{% static 'images/default_profile.png' %}" alt="user photo">
+                    {% endif %}
+                </a>
+                <p>{{ user.username }}</p>
+                {% if user != request.user %}
+                    <form method="post" class="mb-0">
+                        {% csrf_token %}
+                        <input type="hidden" name="user" value="{{user.id}}">
+                        {% if user in request.user.follows.all %}
+                            <button type="submit" class="btn btn--red btn--little btn--smallmt" name="follow" value="unfollow">Ne plus suivre</button>
+                        {% else %}
+                            <button type="submit" class="btn btn--blue btn--little btn--smallmt" name="follow" value="follow">Suivre</button>
+                        {% endif %}
+                    </form>
+                {% endif %}
+            </div>
+        {% endfor %}   
+        </div>
     </div>
-    <form method="post" class="form--django">
-        {{ form.as_p }}
-        {% csrf_token %}
-        <div class="btn-container">
-            <button type="submit" class="btn btn--rose">Suivre</button>
-       </div>
-    </form>
+    <div class="content__subsection">
+        <h3 class="subtitle subtitle--account">Les comptes que vous ne suivez pas encore : </h3>
+        <div class="account__group">
+            {% for user in unfollowed_account %}
+            <div class="account__item">
+                <a href="{% url 'recipes-feed' user.id %}" class="account__link" title="Voir le feed de {{user.username}}">
+                    {% if user.profile_photo %}
+                        <img class="account__pic" src="{{ user.profile_photo.url }}" alt="{{ user.username }} photo">
+                    {% else %}
+                        <img class="account__pic" src="{% static 'images/default_profile.png' %}" alt="user photo">
+                    {% endif %}
+                    <p>{{ user.username }}</p>
+                </a>
+                {% if user != request.user %}
+                    <form method="post" class="mb-0">
+                        {% csrf_token %}
+                        <input type="hidden" name="user" value="{{user.id}}">
+                        {% if user in request.user.follows.all %}
+                            <button type="submit" class="btn btn--red btn--little btn--smallmt" name="follow" value="unfollow">Ne plus suivre</button>
+                        {% else %}
+                            <button type="submit" class="btn btn--blue btn--little btn--smallmt" name="follow" value="follow">Suivre</button>
+                        {% endif %}
+                    </form>
+                {% endif %}
+            </div>
+        {% endfor %}    
+        </div>  
+    </div>
 </section>
 {% endblock content %}

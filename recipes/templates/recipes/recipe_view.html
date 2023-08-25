@@ -34,21 +34,21 @@
             <p><span class="recipe__p">Temps de préparation :</span> {{ recipe.preparation_time }}</p>
             <p><span class="recipe__p">Temps de cuisson :</span> {{ recipe.cooking_time }}</p>
             <div class="recipes__badges">
-                <p class="recipe__p">Catégorie :<span class="recipe__badge recipe__badge--cat">{{ recipe.get_category_display }}</span></p>
-                <p class="recipe__p">Difficultée :{{ recipe.get_level_display|bg_color|safe }}</p>
-                <p class="recipe__p">Coût :{{ recipe.get_cost_display|bg_color|safe }}</p>
+                <p class="recipe__badge__p">Catégorie :<span class="recipe__badge recipe__badge--cat">{{ recipe.get_category_display }}</span></p>
+                <p class="recipe__badge__p">Difficultée :{{ recipe.get_level_display|bg_color|safe }}</p>
+                <p class="recipe__badge__p">Coût :{{ recipe.get_cost_display|bg_color|safe }}</p>
             </div>
             <p class="recipe__p">Nombre de parts : {{ recipe.piece }}.</p>
-            <h4 class="subtitle">{{recipe.ingredient_set.all|length }} Ingredients : </h4>
             <div class="recipe__ingredients">
+                <h4 class="recipe__sub__title recipe__sub__title--ingredient">{{recipe.ingredient_set.all|length }} Ingredients : </h4>
                 {% for ingredient in recipe.ingredient_set.all %}
-                    <p class="recipe__ingredient__text">{{ ingredient.content }}</p>
+                    <p class="recipe__text"><b>{{ forloop.counter }}.</b> {{ ingredient.content }}</p>
                 {% endfor %}
             </div>
             <div class="recipe__stages">
                 {% for stage in recipe.stage_set.all %}
-                    <h3 class="recipe__stage__title">Etape n°{{ forloop.counter }}</h3>
-                    <p class="recipe__stage__text">{{ stage.content }}</p>
+                    <h3 class="recipe__sub__title recipe__sub__title--stage">Etape n°{{ forloop.counter }}</h3>
+                    <p class="recipe__text">{{ stage.content }}</p>
                 {% endfor %}
             </div>
             {% if recipe.author == request.user %}

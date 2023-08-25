@@ -1,7 +1,7 @@
 /* Footer */
 
 footer {
-    @apply bg-blend-overlay dark:bg-gray-800 dark:border-gray-700 bg-white/20 w-full;
+    @apply bg-blend-overlay bg-white/20 w-full;
 }
 
 .footer-content {

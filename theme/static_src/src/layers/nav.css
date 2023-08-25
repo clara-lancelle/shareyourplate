@@ -5,11 +5,15 @@ nav {
 }
 
 .nav-content {  
-    @apply max-w-screen-xl flex flex-wrap items-center w-full justify-between mx-auto px-1 py-3;
+    @apply max-w-screen-xl flex items-center w-full justify-between mx-auto px-1 py-3;
 }
 
 .nav-link {
     @apply px-4 py-2 text-base text-gray-500 hover:bg-gray-100;
+}
+
+.user-nav-link {
+    @apply px-4 py-2 my-2 text-sm text-gray-500 hover:bg-gray-100;
 }
 
 .user-dropdown {
@@ -20,7 +24,6 @@ nav {
     @apply block text-sm text-gray-900;
 }
 
-
 .main-menu {
     @apply items-center justify-between w-full order-1 inset-x-0 p-2 pr-2 md:mx-4 mx-0 z-40;
 }
@@ -30,7 +33,7 @@ nav {
 }
 
 .main-menu-ul {
-    @apply flex font-medium items-start lg:items-center rounded-lg lg:flex-row flex-col md:space-x-8 md:mt-0 md:border-0 rounded-r-lg shadow-md transition transform origin-top-right bg-white overflow-hidden px-2 py-2 space-y-1 gap-2 ;
+    @apply flex font-medium lg:items-center rounded-lg lg:flex-row flex-col md:space-x-8 md:mt-0 md:border-0 rounded-r-lg shadow-md transition transform origin-top-right bg-white overflow-hidden space-y-1 gap-2 lg:divide-x lg:divide-y-0 divide-y justify-around md:p-4 p-2 ;
 }
 
 .main-menu-ul--nolog {
@@ -42,7 +45,7 @@ nav {
 }
 
 .main-menu-link {
-    @apply block px-3 mt-0 lg:py-2 my-0 rounded-md text-base font-medium text-gray-700 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out hover:bg-gray-100;
+    @apply px-3 rounded-md text-base font-normal text-gray-700 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out hover:bg-gray-100 lg:my-0 py-2;
 }
 
 .user-menu-button {

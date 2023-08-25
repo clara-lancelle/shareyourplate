@@ -8,7 +8,9 @@
 @import "./components/links.css";
 @import "./components/filters.css";
 @import "./components/pagination.css";
-@import "./layers/recipe.css";
 @import "./layers/nav.css";
 @import "./layers/footer.css";
+@import "./layers/recipe.css";
+@import "./layers/follow_users.css";
+
 

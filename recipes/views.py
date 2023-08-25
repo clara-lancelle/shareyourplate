@@ -20,7 +20,6 @@ def search_page(request):
     logging.error(request.POST)
     if request.method == "POST":
         if 'search_input' in request.POST:
-            logging.error(request.POST['search_input'])
             form = forms.SearchForm(request.POST)
             query = request.POST['search_input']
             recipes = models.Recipe.objects.filter(Q(name__icontains=query) | Q(description__icontains=query))
@@ -186,7 +185,7 @@ def recipe_view(request, recipe_id):
 @login_required
 def recipe_edit(request, recipe_id):
     recipe = get_object_or_404(models.Recipe, id=recipe_id)
-    picture = get_object_or_404(models.Picture, id=recipe.picture.id    )
+    picture = get_object_or_404(models.Picture, id=recipe.picture.id)
     stages = models.Stage.objects.all().filter(recipe=recipe_id)
     ingredients = models.Ingredient.objects.all().filter(recipe=recipe_id)
     recipe_form = forms.RecipeForm(instance=recipe)
@@ -248,17 +247,22 @@ def recipe_edit(request, recipe_id):
         
 @login_required
 def follow_users(request):
-    form = forms.FollowUsersForm(instance=request.user)
-    followed_account = request.user.follows.only('username')
+    unfollowed_account = User.objects.exclude(id__in=request.user.follows.all())
     if request.method == 'POST':
-        form = forms.FollowUsersForm(request.POST, instance=request.user)
-        if form.is_valid():
-            form.save()
-            new_followed_account = User.objects.get(id=request.POST['follows'])
-            messages.success(request, f"Vous suivez désormais { new_followed_account } !")
+        if 'follow' in request.POST:
+            action = request.POST['follow']
+            action_user = User.objects.get(id=request.POST['user'])
+            if action_user :
+                if action == 'unfollow':
+                    request.user.follows.remove(action_user)
+                    messages.success(request, f"Vous ne suivez désormais plus { action_user } !")
+                else:
+                    request.user.follows.add(action_user)
+                    messages.success(request, f"Vous suivez désormais { action_user } !")
+
+            request.user.save()
     context = {
-        'form': form,
-        'title': 'Les comptes à suivre',
-        'followed_account': followed_account,
+        'title': 'Follow & Followers',
+        'unfollowed_account': unfollowed_account,
     }
     return render(request, 'recipes/follow_users.html', context=context)
