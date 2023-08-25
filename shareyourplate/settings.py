@@ -26,12 +26,19 @@ WSGI_APPLICATION = 'shareyourplate.wsgi.app'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [BASE_DIR.joinpath('static/')]
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+
+cloudinary.config(
+    cloud_name = str(os.getenv('CLOUDINARY_CLOUD_NAME')),
+    api_key = str(os.getenv('CLOUDINARY_API_KEY')),
+    api_secret = str(os.getenv('CLOUDINARY_API_SECRET')),
+)
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 # Application definition
@@ -156,8 +163,6 @@ TAILWIND_APP_NAME = 'theme'
 #     }
 # }
 
-# DATABASES = {}
-
 # LOGGING = {
 #     'version': 1,
 #     'handlers': {
@@ -189,14 +194,6 @@ ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 
-cloudinary.config(
-    cloud_name = str(os.getenv('CLOUDINARY_CLOUD_NAME')),
-    api_key = str(os.getenv('CLOUDINARY_API_KEY')),
-    api_secret = str(os.getenv('CLOUDINARY_API_SECRET')),
-)
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -209,25 +206,25 @@ DATABASES = {
     }
 }
 
-# LOGGING = {
-#     'version': 1,
-#     'handlers': {
-#         "file": {
-#             "level": "DEBUG",
-#             "class": "logging.FileHandler",
-#             "filename": BASE_DIR / "debug.log",
-#         },
-#     },
-#     'loggers': {
-#         'django':{
-#             'handlers':['file'],
-#             'level':'INFO'
-#         }
-#     },
-#     'formatters': {
-#         'custom': {
-#             'format':  '{name} {asctime} {levelname} :: {message}',
-#             'style': '{',
-#         }
-#     }
-# }
+# # LOGGING = {
+# #     'version': 1,
+# #     'handlers': {
+# #         "file": {
+# #             "level": "DEBUG",
+# #             "class": "logging.FileHandler",
+# #             "filename": BASE_DIR / "debug.log",
+# #         },
+# #     },
+# #     'loggers': {
+# #         'django':{
+# #             'handlers':['file'],
+# #             'level':'INFO'
+# #         }
+# #     },
+# #     'formatters': {
+# #         'custom': {
+# #             'format':  '{name} {asctime} {levelname} :: {message}',
+# #             'style': '{',
+# #         }
+# #     }
+# # }

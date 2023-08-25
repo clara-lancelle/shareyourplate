@@ -3,6 +3,11 @@
 {% load cloudinary %}
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="ShareYourPlate is a Cookbook online where you can add all your best recipes and follow your friends, family and favorite chefs !" >
+        <meta name="keywords" content="cookbook, recipes, ingredients, cook, chef, follow, recipe, family, friends, share, plate, eat, diner, recette, plat, dessert, cuisiner, manger, amis, famille"/>
+        <meta name="author" content="Lancelle Clara">
+        <meta name="copyright" content="propriétaire du copyright : Lancelle Clara">
         <title>Share your plate</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.css" rel="stylesheet" />
         {% tailwind_css %}
@@ -71,7 +76,7 @@
                         </ul>
                     </div>
                     {% else %}
-                    <button type="button" class="user-menu-button" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="left">
+                    <button type="button" class="user-menu-button" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                         <img class="w-8 h-8 rounded-full" src="{% static 'images/default_profile.png' %}" alt="user photo">    
                     </button>
                         <div class="user-dropdown" id="user-dropdown">
