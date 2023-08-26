@@ -16,6 +16,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         'self',
         symmetrical=False,
         verbose_name='Comptes à suivre',
+        related_name='users'
     )
 
     USERNAME_FIELD = 'email'

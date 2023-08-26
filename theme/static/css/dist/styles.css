@@ -1160,9 +1160,22 @@ h1 {
   margin-bottom: 1.25rem;
   display: flex;
   flex-direction: column;
+  padding: 0.75rem;
+}
+
+.content__subsection--gray {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-  padding: 0.75rem;
+}
+
+.content__subsection--darker {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.content__subsection--moredarker {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
 /* Sidebars */
@@ -3224,9 +3237,20 @@ footer {
 .subtitle--account {
   padding-bottom: 1rem;
   text-decoration-line: underline;
-  text-decoration-color: #93c5fd;
   text-decoration-thickness: 4px;
   text-underline-offset: 8px;
+}
+
+.subtitle--blue {
+  text-decoration-color: #93c5fd;
+}
+
+.subtitle--red {
+  text-decoration-color: #fca5a5;
+}
+
+.subtitle--orange {
+  text-decoration-color: #fdba74;
 }
 
 .account__group {
@@ -3271,8 +3295,8 @@ footer {
 }
 
 .account__pic {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
   border-radius: 9999px;
 }
 

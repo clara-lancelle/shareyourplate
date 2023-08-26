@@ -247,7 +247,9 @@ def recipe_edit(request, recipe_id):
         
 @login_required
 def follow_users(request):
-    unfollowed_account = User.objects.exclude(id__in=request.user.follows.all())
+    unfollowed_accounts = User.objects.exclude(id__in=request.user.follows.all())
+    followed_by_accounts = User.objects.filter(follows=request.user.id)
+    logging.error(followed_by_accounts)
     if request.method == 'POST':
         if 'follow' in request.POST:
             action = request.POST['follow']
@@ -263,6 +265,7 @@ def follow_users(request):
             request.user.save()
     context = {
         'title': 'Follow & Followers',
-        'unfollowed_account': unfollowed_account,
+        'unfollowed_accounts': unfollowed_accounts,
+        'followed_by_accounts': followed_by_accounts,
     }
     return render(request, 'recipes/follow_users.html', context=context)

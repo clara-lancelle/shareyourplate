@@ -2,20 +2,20 @@
 {% load static %}
 {% block content %}
 <section class="content"> 
-    <div class="content__subsection">
-        <h3 class="subtitle subtitle--account">Comptes que vous suivez : </h3>
+    <div class="content__subsection content__subsection--gray">
+        <h3 class="subtitle subtitle--account subtitle--blue">Comptes que vous suivez : </h3>
         <div class="account__group">
             {% for user in request.user.follows.all %}
-            <div class="account__item">
-                <a href="{% url 'recipes-feed' user.id %}" class="account__link" title="Voir le feed de {{user.username}}">
-                    {% if user.profile_photo %}
-                        <img class="account__pic" src="{{ user.profile_photo.url }}" alt="{{ user.username }} photo">
-                    {% else %}
-                        <img class="account__pic" src="{% static 'images/default_profile.png' %}" alt="user photo">
-                    {% endif %}
-                </a>
-                <p>{{ user.username }}</p>
                 {% if user != request.user %}
+                <div class="account__item">
+                    <a href="{% url 'recipes-feed' user.id %}" class="account__link" title="Voir le feed de {{user.username}}">
+                        {% if user.profile_photo %}
+                            <img class="account__pic" src="{{ user.profile_photo.url }}" alt="{{ user.username }} photo">
+                        {% else %}
+                            <img class="account__pic" src="{% static 'images/default_profile.png' %}" alt="user photo">
+                        {% endif %}
+                    </a>
+                    <p>{{ user.username }}</p>
                     <form method="post" class="mb-0">
                         {% csrf_token %}
                         <input type="hidden" name="user" value="{{user.id}}">
@@ -25,25 +25,25 @@
                             <button type="submit" class="btn btn--blue btn--little btn--smallmt" name="follow" value="follow">Suivre</button>
                         {% endif %}
                     </form>
-                {% endif %}
-            </div>
+                </div>
+            {% endif %}
         {% endfor %}   
         </div>
     </div>
-    <div class="content__subsection">
-        <h3 class="subtitle subtitle--account">Les comptes que vous ne suivez pas encore : </h3>
+    <div class="content__subsection content__subsection--darker">
+        <h3 class="subtitle subtitle--account subtitle--red">Les comptes que vous ne suivez pas encore : </h3>
         <div class="account__group">
-            {% for user in unfollowed_account %}
-            <div class="account__item">
-                <a href="{% url 'recipes-feed' user.id %}" class="account__link" title="Voir le feed de {{user.username}}">
-                    {% if user.profile_photo %}
-                        <img class="account__pic" src="{{ user.profile_photo.url }}" alt="{{ user.username }} photo">
-                    {% else %}
-                        <img class="account__pic" src="{% static 'images/default_profile.png' %}" alt="user photo">
-                    {% endif %}
-                    <p>{{ user.username }}</p>
-                </a>
-                {% if user != request.user %}
+            {% for user in unfollowed_accounts %}
+            {% if user != request.user %}
+                 <div class="account__item">
+                    <a href="{% url 'recipes-feed' user.id %}" class="account__link" title="Voir le feed de {{user.username}}">
+                        {% if user.profile_photo %}
+                            <img class="account__pic" src="{{ user.profile_photo.url }}" alt="{{ user.username }} photo">
+                        {% else %}
+                            <img class="account__pic" src="{% static 'images/default_profile.png' %}" alt="user photo">
+                        {% endif %}
+                        <p>{{ user.username }}</p>
+                    </a>
                     <form method="post" class="mb-0">
                         {% csrf_token %}
                         <input type="hidden" name="user" value="{{user.id}}">
@@ -53,10 +53,38 @@
                             <button type="submit" class="btn btn--blue btn--little btn--smallmt" name="follow" value="follow">Suivre</button>
                         {% endif %}
                     </form>
-                {% endif %}
-            </div>
-        {% endfor %}    
+                </div>
+            {% endif %}
+            {% endfor %}    
         </div>  
+    </div>
+    <div class="content__subsection content__subsection--moredarker">
+        <h3 class="subtitle subtitle--account subtitle--orange">Les comptes qui vous suivent : </h3>
+        <div class="account__group">
+            {% for user in followed_by_accounts %}
+                {% if user != request.user %}
+                <div class="account__item">
+                        <a href="{% url 'recipes-feed' user.id %}" class="account__link" title="Voir le feed de {{user.username}}">
+                            {% if user.profile_photo %}
+                                <img class="account__pic" src="{{ user.profile_photo.url }}" alt="{{ user.username }} photo">
+                            {% else %}
+                                <img class="account__pic" src="{% static 'images/default_profile.png' %}" alt="user photo">
+                            {% endif %}
+                            <p>{{ user.username }}</p>
+                        </a>
+                        <form method="post" class="mb-0">
+                            {% csrf_token %}
+                            <input type="hidden" name="user" value="{{user.id}}">
+                            {% if user in request.user.follows.all %}
+                                <button type="submit" class="btn btn--red btn--little btn--smallmt" name="follow" value="unfollow">Ne plus suivre</button>
+                            {% else %}
+                                <button type="submit" class="btn btn--blue btn--little btn--smallmt" name="follow" value="follow">Suivre</button>
+                            {% endif %}
+                        </form>
+                    </div>
+                {% endif %}
+            {% endfor %}    
+        </div>
     </div>
 </section>
 {% endblock content %}

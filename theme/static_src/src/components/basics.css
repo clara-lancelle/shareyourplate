@@ -42,7 +42,17 @@ h1 {
 }
 
 .content__subsection {
-    @apply flex flex-col p-3 my-5 bg-gray-50;
+    @apply flex flex-col p-3 my-5;
+}
+
+.content__subsection--gray {
+    @apply bg-gray-50;
+}
+.content__subsection--darker {
+    @apply bg-gray-100;
+}
+.content__subsection--moredarker {
+    @apply bg-gray-200;
 }
 
 /* Sidebars */
