@@ -140,15 +140,17 @@ def recipe_create(request):
                         recipe.picture = picture
                         recipe.save()
                         for index, form in enumerate(formset, start=1):
-                            stage = form.save(commit=False)
-                            stage.recipe = recipe
-                            stage.order = index
-                            stage.save()  
+                            if form["content"].data != '' and form["content"].data is not None:
+                                stage = form.save(commit=False)
+                                stage.recipe = recipe
+                                stage.order = index
+                                stage.save()  
                         for index, form in enumerate(ingredient_formset, start=1):
-                            ingredient = form.save(commit=False)
-                            ingredient.recipe = recipe
-                            ingredient.order = index
-                            ingredient.save()  
+                            if form["content"].data != '' and form["content"].data is not None:
+                                ingredient = form.save(commit=False)
+                                ingredient.recipe = recipe
+                                ingredient.order = index
+                                ingredient.save()  
                         messages.success(request, "Super, Une nouvelle recette à été ajouté !")
                         return redirect('recipe-view', recipe.id)
             except Exception as e:

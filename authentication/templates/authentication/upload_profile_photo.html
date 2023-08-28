@@ -2,7 +2,13 @@
 {% block content %}
     <section class="content content--center">
         <form method="post" enctype="multipart/form-data">
-            <p>Image actuelle : {{ form.instance.profile_photo ?? ' ' }}</p>
+            <p class="flex items-center justify-around">Image actuelle : 
+                {% if request.user.profile_photo %}
+                    <img class="w-20 h-20 rounded-full" src="{{ request.user.profile_photo.url }}" alt="{{ request.user.username }} photo">
+                {% else %}
+                    Vous n'avez pas encore de photo de profil.
+                {% endif %}
+                </p>
             {% if form.non_field_errors %}
                 <div class="error-message">{{ form.non_field_errors }}</div>
             {% endif %}

@@ -6,7 +6,7 @@
 }
 
 .recipe__image {
-    @apply self-center my-5 flex rounded-lg transition duration-300 ease-in-out transform hover:translate-y-1 hover:shadow-slate-400 hover:shadow-sm focus:translate-y-1 focus:shadow-slate-400 focus:shadow-sm active:translate-y-1 active:shadow-slate-400 active:shadow-sm  max-w-3xl max-h-40 md:max-w-5xl md:max-h-72;
+    @apply self-center my-5 flex rounded-lg transition duration-300 ease-in-out transform hover:translate-y-1 hover:shadow-slate-400 hover:shadow-sm focus:translate-y-1 focus:shadow-slate-400 focus:shadow-sm active:translate-y-1 active:shadow-slate-400 active:shadow-sm max-h-80 max-w-full;
 }
 
 .recipe__link {
@@ -18,7 +18,7 @@
 }
 
 .recipe__p {
-    @apply text-base font-extralight italic;
+    @apply md:text-base text-sm font-extralight italic;
 }
 
 .recipe__description {
@@ -40,7 +40,7 @@
 /* titles */
 
 .recipe__title {
-    @apply flex self-start text-5xl my-8 sm:text-5xl font-serif text-gray-700 leading-normal;
+    @apply flex self-start md:text-5xl my-8 text-3xl font-serif text-gray-700 leading-normal;
 }
 
 .recipe__sub__title {

@@ -4,10 +4,16 @@ from PIL import Image
 from django.core.validators import MaxValueValidator, MinValueValidator
 from cloudinary.models import CloudinaryField
 from cloudinary import CloudinaryImage
+from django.core.exceptions import ValidationError
 
 class Picture(models.Model):
     # image = models.ImageField()
-    image = CloudinaryField('image')
+    def validate_image(file):
+        filesize = file.size
+        megabyte_limit = 3.0
+        if filesize > megabyte_limit*1024*1024:
+            raise ValidationError("L'image est trop grande, la taille maximale est de %sMB" % str(megabyte_limit))
+    image = CloudinaryField('image', validators=[validate_image])
     caption = models.CharField(max_length=128, blank=True, verbose_name='Titre de l\'image')
     IMAGE_MAX_SIZE = (800, 800)
 

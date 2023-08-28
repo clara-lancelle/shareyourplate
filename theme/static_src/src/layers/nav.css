@@ -33,7 +33,10 @@ nav {
 }
 
 .main-menu-ul {
-    @apply flex font-medium lg:items-center rounded-lg lg:flex-row flex-col md:space-x-8 md:mt-0 md:border-0 rounded-r-lg shadow-md transition transform origin-top-right bg-white overflow-hidden space-y-1 gap-2 lg:divide-x lg:divide-y-0 divide-y justify-around md:p-4 p-2 ;
+    @apply flex font-medium lg:items-center rounded-lg lg:flex-row flex-col md:space-x-8 md:mt-0 md:border-0 rounded-r-lg shadow-md transition transform origin-top-right bg-white overflow-hidden space-y-1 gap-0 lg:divide-x lg:divide-y-0 divide-y justify-around md:p-4 p-2 ;
+}
+.main-menu-ul li {
+    @apply py-2 md:py-0;
 }
 
 .main-menu-ul--nolog {
