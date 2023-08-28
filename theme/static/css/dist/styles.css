@@ -2960,11 +2960,17 @@ footer {
 .recipe__author {
   display: inline-flex;
   align-items: center;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
+  justify-content: space-between;
+  gap: 0px;
   padding-top: 1.25rem;
   padding-bottom: 2.5rem;
-  vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+  .recipe__author {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
 }
 
 .recipe__author--subblock {

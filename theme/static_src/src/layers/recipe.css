@@ -30,7 +30,7 @@
 }
 
 .recipe__author {
-    @apply inline-flex align-middle gap-x-8 items-center pt-5 pb-10;
+    @apply inline-flex md:gap-x-8 gap-0 items-center pt-5 pb-10 justify-between;
 }
 
 .recipe__author--subblock {
