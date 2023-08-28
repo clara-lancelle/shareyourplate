@@ -105,7 +105,7 @@
 }
 
 .recipe__pop__img {
-    @apply flex rounded-lg transition duration-300 ease-in-out transform hover:translate-y-1 hover:shadow-slate-400 hover:shadow-md focus:ring-4 focus:outline-none px-5 py-2.5 text-center;
+    @apply flex rounded-lg transition duration-300 ease-in-out transform hover:translate-y-1 hover:shadow-slate-400 hover:shadow-md focus:ring-4 focus:outline-none px-5 py-2.5 text-center object-cover;
 }
 
 .recipe__pop__div {
