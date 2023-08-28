@@ -96,7 +96,7 @@ def recipes_feed(request, account_id):
             if request.GET.get('filter'):
                 request_filter = request.GET.get('filter')
                 if request_filter in filters.names:
-                    recipes = models.Recipe.objects.filter(category__icontains=request_filter.lower()).order_by('date_created')
+                    recipes = models.Recipe.objects.filter(category__icontains=request_filter.lower(), author=account_id).order_by('date_created')
         paginator = Paginator(recipes, 15)
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
