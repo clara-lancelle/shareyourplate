@@ -24,9 +24,9 @@
                     {% if user.is_authenticated %}
                         <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full  focus:ring-4 focus:ring-gray-300" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                             {% if user.profile_photo %}
-                                <img class="w-8 h-8 rounded-full" src="{{ user.profile_photo.url }}" alt="user photo">
+                                <img class="w-8 h-8 profile_pic" src="{{ user.profile_photo.url }}" alt="user photo">
                             {% else %}
-                                <img class="w-8 h-8 rounded-full" src="{% static 'images/default_profile.png' %}" alt="user photo">
+                                <img class="w-8 h-8 profile_pic" src="{% static 'images/default_profile.png' %}" alt="user photo">
                             {% endif %}
                         </button>
                         <!-- Dropdown menu authenticated-->

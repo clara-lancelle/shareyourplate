@@ -17,7 +17,6 @@ def search_page(request):
     recipes = []
     users = []
     form = forms.SearchForm()
-    logging.error(request.POST)
     if request.method == "POST":
         if 'search_input' in request.POST:
             form = forms.SearchForm(request.POST)
@@ -39,7 +38,6 @@ def recipes_all(request):
     filters = models.Recipe.Category
     if recipes :
         if request.method == 'GET':
-            logging.error(request.GET)
             if request.GET.get('filter'):
                 request_filter = request.GET.get('filter')
                 if request_filter in filters.names:
@@ -95,7 +93,6 @@ def recipes_feed(request, account_id):
     filters = models.Recipe.Category
     if recipes :
         if request.method == 'GET':
-            logging.error(request.GET)
             if request.GET.get('filter'):
                 request_filter = request.GET.get('filter')
                 if request_filter in filters.names:
@@ -249,9 +246,8 @@ def recipe_edit(request, recipe_id):
         
 @login_required
 def follow_users(request):
-    unfollowed_accounts = User.objects.exclude(id__in=request.user.follows.all())
+    unfollowed_accounts = User.objects.exclude(id__in=request.user.follows.all())[:4]
     followed_by_accounts = User.objects.filter(follows=request.user.id)
-    logging.error(followed_by_accounts)
     if request.method == 'POST':
         if 'follow' in request.POST:
             action = request.POST['follow']

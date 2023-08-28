@@ -1098,7 +1098,7 @@ h1 {
 
 .container {
   display: flex;
-  min-height: 100%;
+  min-height: 61%;
   min-width: 100%;
   flex-direction: row;
   overflow: hidden;
@@ -1106,7 +1106,7 @@ h1 {
 
 .container--col {
   display: flex;
-  min-height: 100%;
+  min-height: 61%;
   min-width: 100%;
   flex-direction: column;
   overflow: hidden;
@@ -1278,6 +1278,14 @@ section.sidebar {
   width: 100% !important;
   -moz-column-gap: 1.25rem !important;
        column-gap: 1.25rem !important;
+}
+
+/* Profil pic */
+
+.profile_pic {
+  border-radius: 9999px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* Forms */
@@ -3344,7 +3352,6 @@ footer {
 .account__pic {
   height: 3.5rem;
   width: 3.5rem;
-  border-radius: 9999px;
 }
 
 .focus\:ring-4:focus {

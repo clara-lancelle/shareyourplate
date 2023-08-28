@@ -26,11 +26,11 @@ h1 {
 /* container & sections */
 
 .container {
-    @apply flex flex-row min-h-full min-w-full overflow-hidden;
+    @apply flex flex-row min-h-[61%] min-w-full overflow-hidden;
 }
 
 .container--col {
-    @apply flex flex-col min-h-full min-w-full overflow-hidden;
+    @apply flex flex-col min-h-[61%] min-w-full overflow-hidden;
 }
 
 .content {
@@ -94,4 +94,10 @@ section.sidebar {
 
 .block__item {
     @apply flex w-full my-2 gap-x-5 !important;
+}
+
+/* Profil pic */
+
+.profile_pic {
+    @apply object-cover rounded-full;
 }
