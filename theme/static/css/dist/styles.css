@@ -1722,6 +1722,7 @@ ul.messages li {
 /* Filters */
 
 .filters {
+  margin-bottom: 1rem;
   display: flex;
   height: auto;
   width: 100%;
@@ -1746,6 +1747,18 @@ ul.messages li {
 .filters__btn:hover {
   --tw-text-opacity: 1;
   color: rgb(163 230 53 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .filters__btn {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.filter_active {
+  --tw-text-opacity: 1;
+  color: rgb(101 163 13 / var(--tw-text-opacity));
 }
 
 /* Pagination */
@@ -1806,16 +1819,16 @@ ul.messages li {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
-  background-color: rgb(255 247 237 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
-  color: rgb(234 88 12 / var(--tw-text-opacity));
+  color: rgb(101 163 13 / var(--tw-text-opacity));
 }
 
 .pag__active:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 237 213 / var(--tw-bg-opacity));
+  background-color: rgb(247 254 231 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
-  color: rgb(194 65 12 / var(--tw-text-opacity));
+  color: rgb(77 124 15 / var(--tw-text-opacity));
 }
 
 .pag__last {

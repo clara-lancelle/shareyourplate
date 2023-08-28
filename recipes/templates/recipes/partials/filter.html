@@ -1,5 +1,5 @@
 <div class="filters">
     {% for item in filters %}
-        <a class="filters__btn" type="submit" href="?filter={{ item.name }}">{{ item.label }}</a>
+        <a class="filters__btn {% if request_filter and request_filter == item.name %} filter_active {% endif %}" type="submit" href="?filter={{ item.name }}">{{ item.label }}</a>
     {% endfor %}
 </div>

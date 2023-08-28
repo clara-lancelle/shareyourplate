@@ -92,6 +92,7 @@ def recipes_feed(request, account_id):
     account = User.objects.get(id=account_id)
     filters = models.Recipe.Category
     if recipes :
+        request_filter = ''
         if request.method == 'GET':
             if request.GET.get('filter'):
                 request_filter = request.GET.get('filter')
@@ -104,6 +105,7 @@ def recipes_feed(request, account_id):
             'page_obj': page_obj,
             'title': f"Recettes de {account}", 
             'filters': filters,
+            'request_filter' : request_filter,
         } 
     if not recipes :
         messages.info(request, "Oups..Aucune recette n'a été trouvée.")

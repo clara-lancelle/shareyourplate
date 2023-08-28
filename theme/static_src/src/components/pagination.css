@@ -17,10 +17,10 @@
 }
 
 .pag__active {
-    @apply  text-orange-600 border border-gray-300 bg-orange-50 hover:bg-orange-100 hover:text-orange-700;
+    @apply  text-lime-600 border border-gray-300 bg-white hover:bg-lime-50 hover:text-lime-700;
 }
 
 
 .pag__last {
-    @apply  rounded-r-lg;
+    @apply rounded-r-lg;
 }
