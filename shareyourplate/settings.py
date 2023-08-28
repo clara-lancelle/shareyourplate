@@ -206,25 +206,25 @@ DATABASES = {
     }
 }
 
-# LOGGING = {
-#     'version': 1,
-#     'handlers': {
-#         "file": {
-#             "level": "DEBUG",
-#             "class": "logging.FileHandler",
-#             "filename": BASE_DIR / "debug.log",
-#         },
-#     },
-#     'loggers': {
-#         'django':{
-#             'handlers':['file'],
-#             'level':'INFO'
-#         }
-#     },
-#     'formatters': {
-#         'custom': {
-#             'format':  '{name} {asctime} {levelname} :: {message}',
-#             'style': '{',
-#         }
-#     }
-# }
+# # LOGGING = {
+# #     'version': 1,
+# #     'handlers': {
+# #         "file": {
+# #             "level": "DEBUG",
+# #             "class": "logging.FileHandler",
+# #             "filename": BASE_DIR / "debug.log",
+# #         },
+# #     },
+# #     'loggers': {
+# #         'django':{
+# #             'handlers':['file'],
+# #             'level':'INFO'
+# #         }
+# #     },
+# #     'formatters': {
+# #         'custom': {
+# #             'format':  '{name} {asctime} {levelname} :: {message}',
+# #             'style': '{',
+# #         }
+# #     }
+# # }

@@ -17,9 +17,11 @@
 }
 
 .account__item {
-    @apply flex flex-col items-center sm:w-[15%] w-[40%] py-2 overflow-hidden shadow-lg bg-white gap-1 text-center;
+    @apply flex flex-col items-center md:w-[15%] w-[40%] py-2 overflow-hidden shadow-lg bg-white gap-1 text-center;
 }
-
+.account__link {
+    @apply flex flex-col justify-center items-center;
+}
 .account__pic {
     @apply w-14 h-14;
 }

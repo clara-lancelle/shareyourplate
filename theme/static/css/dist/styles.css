@@ -3173,6 +3173,7 @@ footer {
 
 .recipe__snippet {
   display: flex;
+  max-height: 20rem;
 }
 
 @media (min-width: 640px) {
@@ -3343,10 +3344,17 @@ footer {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .account__item {
     width: 15%;
   }
+}
+
+.account__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .account__pic {
